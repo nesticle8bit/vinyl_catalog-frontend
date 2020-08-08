@@ -17,13 +17,13 @@ export class VinylService extends IVinylService {
     saveVinyl(vinyl: any): Observable<any> {
         return this.http.post<any>(`${environment.api}/vinyl/saveVinyl`, vinyl)
             .pipe(map((response: any) => {
-                if (response.artist) {
-                    return response.artist;
+                if (response.status === 200) {
+                    return response.data;
                 } else {
                     Swal.fire({
                         icon: 'error',
                         title: 'Error',
-                        text: response.message
+                        text: response.errors.join(',')
                     });
                 }
             }));

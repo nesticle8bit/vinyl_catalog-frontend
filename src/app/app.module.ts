@@ -30,6 +30,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { IVinylService } from './services/interfaces/vinyl.interface';
+import { VinylService } from './services/implementations/vinyl.service';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   ],
   providers: [
     { provide: ILastFMService, useClass: LastFMService },
+    { provide: IVinylService, useClass: VinylService },
   ],
   bootstrap: [AppComponent]
 })
