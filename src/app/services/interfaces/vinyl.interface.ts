@@ -5,5 +5,6 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 export abstract class IVinylService {
+    abstract getVinyls(): Observable<any>;
     abstract saveVinyl(vinyl: any): Observable<any>;
 }

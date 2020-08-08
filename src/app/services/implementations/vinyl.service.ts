@@ -14,6 +14,21 @@ export class VinylService extends IVinylService {
         super();
     }
 
+    getVinyls(): Observable<any> {
+        return this.http.get<any>(`${environment.api}/vinyl/getVinyls`)
+            .pipe(map((response: any) => {
+                if (response.status === 200) {
+                    return response.data;
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: response.errors.join(',')
+                    });
+                }
+            }));
+    }
+
     saveVinyl(vinyl: any): Observable<any> {
         return this.http.post<any>(`${environment.api}/vinyl/saveVinyl`, vinyl)
             .pipe(map((response: any) => {

@@ -24,7 +24,7 @@ export class DialogAddVinylComponent implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
-      id: [0],
+      id: [''],
       band: ['', Validators.required],
       album: ['', Validators.required],
       genre: ['', Validators.required],
