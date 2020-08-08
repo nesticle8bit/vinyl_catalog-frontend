@@ -24,6 +24,9 @@ import { VinylCoversListComponent } from './components/lists/vinyl-covers-list/v
 import { DialogAddVinylComponent } from './components/dialogs/dialog-add-vinyl/dialog-add-vinyl.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 
+import { ILastFMService } from './services/interfaces/lastFM.interface';
+import { LastFMService } from './services/implementations/lastFM.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +50,9 @@ import { HeaderComponent } from './components/layout/header/header.component';
     MatInputModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: ILastFMService, useClass: LastFMService },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
