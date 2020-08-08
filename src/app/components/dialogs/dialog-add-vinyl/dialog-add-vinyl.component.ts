@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ILastFMService } from 'src/app/services/interfaces/lastFM.interface';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { IVinylService } from 'src/app/services/interfaces/vinyl.interface';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-add-vinyl',
@@ -13,8 +15,11 @@ export class DialogAddVinylComponent implements OnInit {
   public genreList: any = [];
 
   constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public dialogRef: MatDialogRef<DialogAddVinylComponent>,
     private lastFM: ILastFMService,
     private formBuilder: FormBuilder,
+    private vinylService: IVinylService
   ) { }
 
   ngOnInit(): void {
@@ -81,7 +86,16 @@ export class DialogAddVinylComponent implements OnInit {
 
     const form = Object.assign({}, this.formGroup.value);
 
-    console.log(form);
-    // Swal.fire({title: 'Test', text: 'test', icon: 'success'});
+    this.vinylService.saveVinyl(form).subscribe((response: any) => {
+      if (response) {
+        Swal.fire({
+          title: 'Saved',
+          text: 'Vinyl item was added successfully',
+          icon: 'success',
+        });
+
+        this.dialogRef.close(form);
+      }
+    });
   }
 }
