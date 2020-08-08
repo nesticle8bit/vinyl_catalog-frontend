@@ -130,7 +130,7 @@ export class VinylCoversListComponent implements OnInit {
   addVinyl(): void {
     const dialogRef = this.dialog.open(DialogAddVinylComponent, {
       disableClose: true,
-      width: '900px'
+      width: '980px'
     });
 
     dialogRef.afterClosed().subscribe(result => {

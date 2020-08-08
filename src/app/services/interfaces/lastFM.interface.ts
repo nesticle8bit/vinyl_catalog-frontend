@@ -6,4 +6,5 @@ import { Observable } from 'rxjs';
 })
 export abstract class ILastFMService {
     abstract getArtistInfo(band: string): Observable<any>;
+    abstract getAlbumInfo(band: string, album: string): Observable<any>;
 }

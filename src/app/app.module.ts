@@ -26,6 +26,10 @@ import { HeaderComponent } from './components/layout/header/header.component';
 
 import { ILastFMService } from './services/interfaces/lastFM.interface';
 import { LastFMService } from './services/implementations/lastFM.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,13 @@ import { LastFMService } from './services/implementations/lastFM.service';
     MatNativeDateModule,
     MatSelectModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
+    NgSelectModule,
+    MatTooltipModule
   ],
   providers: [
     { provide: ILastFMService, useClass: LastFMService },

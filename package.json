@@ -26,6 +26,8 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@ng-select/ng-select": "^5.0.0",
+    "ngx-ui-loader": "^9.1.1",
     "rxjs": "~6.5.5",
     "sweetalert2": "^9.17.1",
     "tslib": "^2.0.0",

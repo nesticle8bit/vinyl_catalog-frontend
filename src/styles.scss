@@ -1,8 +1,8 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import "~@ng-select/ng-select/themes/default.theme.css";
 
-body {
-    font-size: .875rem;
-}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: .875rem; }
   
 .feather {
     width: 16px;
@@ -121,5 +121,13 @@ body {
 .cursor--pointer {
   cursor: pointer;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.img-cover-preview {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.img-cover-preview:hover {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
