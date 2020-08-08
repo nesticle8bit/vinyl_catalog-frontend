@@ -1,6 +1,6 @@
 # Vinyl Catalog App
 
-![Vinyl Catalog](https://user-images.githubusercontent.com/1715022/89701842-71c22e00-d900-11ea-9490-e66d85246323.png)
+![Vinyl Catalog](https://user-images.githubusercontent.com/1715022/89718994-6b2bc900-d989-11ea-9092-089c6f7868ea.gif)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
 
