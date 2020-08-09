@@ -5,64 +5,121 @@
 <mat-dialog-content class="mat-typography">
     <form [formGroup]="formGroup">
         <div class="row">
-            <div class="col-12 col-sm-4" *ngIf="formGroup.value.coverURL">
+            <div class="col-12 col-sm-3" *ngIf="formGroup.value.coverURL">
                 <img src="{{formGroup.value.coverURL}}" class="img-fluid img-thumbnail img-cover-preview" [matTooltipPosition]="'below'" matTooltip="{{formGroup.value.band}} - {{formGroup.value.album}}" />
             </div>
 
-            <div class="col-12" [ngClass]="{'col-sm-8': formGroup.value.coverURL}">
+            <div class="col-12" [ngClass]="{'col-sm-9': formGroup.value.coverURL}">
                 <div class="row">
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12 col-sm-4">
                         <div class="form-group">
                             <label>Band</label>
                             <input type="text" class="form-control" formControlName="band" (change)="getLastFMBandInfo()" cdkFocusInitial />
                         </div>
                     </div>
             
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12 col-sm-4">
                         <div class="form-group">
                             <label>Album</label>
                             <input type="text" class="form-control" formControlName="album" (change)="getLastFMBandInfo()" />
                         </div>
                     </div>
-                </div>
-            
-                <div class="row">
-                    <div class="col-12 col-sm-6">
+
+                    <div class="col-12 col-sm-4">
                         <div class="form-group">
                             <label>Genre</label>
                             <input type="text" class="form-control" formControlName="genre" *ngIf="!genreList || genreList.length < 1" />
-                            <ng-select [items]="genreList" [virtualScroll]="true" appendTo="body" formControlName="genre" *ngIf="genreList && genreList.length > 0"></ng-select>
-                        </div>
-                    </div>
-            
-                    <div class="col-12 col-sm-6">
-                        <div class="form-group">
-                            <label>Cover URL</label>
-                            <input type="text" class="form-control" formControlName="coverURL" />
+                            <ng-select [items]="genreList" [virtualScroll]="true" formControlName="genre" *ngIf="genreList && genreList.length > 0"></ng-select>
                         </div>
                     </div>
                 </div>
             
                 <div class="row">
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12 col-sm-4">
                         <div class="form-group">
                             <label>Released</label>
                             <input type="date" class="form-control" formControlName="dateReleased" />
                         </div>
                     </div>
             
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12 col-sm-4">
                         <div class="form-group">
                             <label>Country</label>
                             <input type="text" class="form-control" formControlName="country" />
                         </div>
                     </div>
+
+                    <div class="col-12 col-sm-4">
+                        <div class="form-group">
+                            <label>Color</label>
+                            <ng-select [items]="colorList" [virtualScroll]="true" formControlName="color"></ng-select>
+                        </div>
+                    </div>
                 </div>
             
                 <div class="row">
+                    <div class="col-12 col-sm-4">
+                        <div class="form-group">
+                            <label>Cover URL</label>
+                            <input type="text" class="form-control" formControlName="coverURL" />
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-4">
+                        <div class="form-group">
+                            <label>Number of Discs</label>
+                            <input type="number" class="form-control" formControlName="disc" />
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-4">
+                        <div class="form-group">
+                            <label>Price</label>
+                            <div class="input-group mb-3">
+                                <input type="number" class="form-control" formControlName="price" />
+                                <div class="input-group-append">
+                                    <select class="form-control" formControlName="currency">
+                                        <option value="" selected>---</option>
+                                        <option value="Euro">Euro</option>
+                                        <option value="Dollar">Dollar</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-sm-4">
+                        <div class="form-group">
+                            <label>Type</label>
+                            <ng-select [items]="vinylTypes" [virtualScroll]="true" formControlName="type"></ng-select>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-4">
+                        <div class="form-group">
+                            <label>Date Published</label>
+                            <input type="date" class="form-control" formControlName="datePublished" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
                     <div class="col-12">
-                        <label>Info</label>
-                        <textarea class="form-control" rows="4" formControlName="info"></textarea>
+                        <div class="form-group">
+                            <label>Notes</label>
+                            <textarea class="form-control" rows="4" formControlName="notes"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label>Link (where you bought it?)</label>
+                            <input type="text" class="form-control" formControlName="link" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -73,7 +130,7 @@
 <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancel</button>
 
-    <button mat-button color="primary" (click)="saveVinyl()">
+    <button mat-button color="primary" (click)="saveVinyl()" [disabled]="formGroup.invalid">
         Save
     </button>
 </mat-dialog-actions>

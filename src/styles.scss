@@ -131,3 +131,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 
     filter: blur(3px);
     -webkit-filter: blur(3px);
 }
+
+.img-background-vinyl:hover + .card__info {
+    visibility: visible;
+}
+
+.card__info {
+    visibility: hidden;
+    position: absolute;
+    left: 223px;
+    top: 7px;
+    width: 350px;
+    z-index: 9999;
+}
+
+.card__info > .card-header {
+    padding: 5px;
+
+    & > .card-title {
+        padding: 3px 0 0 3px;
+    }
+}
+

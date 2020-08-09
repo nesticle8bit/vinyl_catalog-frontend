@@ -13,6 +13,25 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class DialogAddVinylComponent implements OnInit {
   public formGroup: FormGroup;
   public genreList: any = [];
+  public colorList = [
+    'Black',
+    'Black/White/Grey',
+    'Blue',
+    'Clear/Red',
+    'Crystal Clear',
+    'Green',
+    'Green/Black',
+    'Purple',
+    'Red',
+    'Red/Blue',
+    'Silver / Black Marbled',
+    'White',
+    'Yellow'
+  ];
+
+  public vinylTypes = [
+    'Reissue'
+  ]
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -29,9 +48,17 @@ export class DialogAddVinylComponent implements OnInit {
       album: ['', Validators.required],
       genre: ['', Validators.required],
       coverURL: ['', Validators.required],
-      dateReleased: ['', Validators.required],
+      dateReleased: [''],
       country: ['', Validators.required],
-      info: ['', Validators.required],
+      info: [''],
+      color: ['Black', Validators.required],
+      disc: [1],
+      price: [0, Validators.required],
+      currency: ['Euro', Validators.required],
+      link: [''],
+      type: [''],
+      datePublished: [''],
+      notes: [''],
     });
   }
 
@@ -92,6 +119,7 @@ export class DialogAddVinylComponent implements OnInit {
           title: 'Saved',
           text: 'Vinyl item was added successfully',
           icon: 'success',
+          timer: 1000
         });
 
         this.dialogRef.close(form);

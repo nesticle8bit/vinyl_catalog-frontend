@@ -141,7 +141,7 @@ export class VinylCoversListComponent implements OnInit {
   addVinyl(): void {
     const dialogRef = this.dialog.open(DialogAddVinylComponent, {
       disableClose: true,
-      width: '980px'
+      width: '1200px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -149,5 +149,18 @@ export class VinylCoversListComponent implements OnInit {
         this.getVinyls();
       }
     });
+  }
+
+  getVinylColor(color: string): string {
+    switch (color.toLowerCase()) {
+      case 'green':
+        return '#1abb44';
+        case 'white':
+        return '#d4d4d4';
+        case 'purple':
+        return '#c50909';
+      default:
+        return '';
+    }
   }
 }
