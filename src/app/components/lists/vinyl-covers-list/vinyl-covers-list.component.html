@@ -30,12 +30,12 @@
         </h3>
     </div>
 
-    <div class="col-6 col-sm-6 col-md-4 col-lg-2 mt-3 mb-3" *ngFor="let item of vinylList">
+    <div class="col-6 col-sm-6 col-md-4 col-lg-2 mt-3 mb-3" *ngFor="let item of vinylList; let i=index" (mouseover)="showInfo=true" (mouseleave)="showInfo=false">
         <div class="img-background-vinyl cursor--pointer">
             <img class="img-cover" title="{{item.band}} / {{item.album}}" [src]="item.coverURL" />
         </div>
-
-        <div class="card card__info shadow-lg" *ngIf="false">
+        
+        <div class="card card__info shadow-lg" [ngClass]="{'card__info--left': (i + 1) % 5 == 0 || (i + 1) % 6 == 0}" *ngIf="showInfo">
             <div class="card-header">
                 <span class="card-title m-0 float-left">
                     <fa-icon icon="info-circle"></fa-icon> Vinyl Information

@@ -123,14 +123,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 
 }
 
 .img-cover-preview {
-    opacity: 1;
     transition: all 0.2s ease-in-out;
 }
 
-.img-cover-preview:hover {
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
-}
+// .img-cover-preview:hover {
+//     filter: blur(1px);
+//     -webkit-filter: blur(1px);
+// }
 
 .img-background-vinyl:hover + .card__info {
     visibility: visible;
@@ -141,6 +140,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 
     position: absolute;
     left: 223px;
     top: 7px;
+    width: 350px;
+    z-index: 9999;
+}
+
+.card__info--left {
+    position: absolute;
+    left: -345px !important;
+    top: 7px !important;
     width: 350px;
     z-index: 9999;
 }

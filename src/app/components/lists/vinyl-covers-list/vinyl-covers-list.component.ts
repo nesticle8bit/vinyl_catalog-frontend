@@ -10,6 +10,7 @@ import { IVinylService } from 'src/app/services/interfaces/vinyl.interface';
 })
 export class VinylCoversListComponent implements OnInit {
   public vinylList = [];
+  public showInfo: false;
 
   constructor(
     public dialog: MatDialog,
