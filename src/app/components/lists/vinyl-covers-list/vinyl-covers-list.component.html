@@ -32,11 +32,12 @@
 
     <div class="col-6 col-sm-6 col-md-4 col-lg-2 mt-3 mb-3" *ngFor="let item of vinylList; let i=index" (mouseover)="showInfo=true" (mouseleave)="showInfo=false">
         <div class="img-background-vinyl cursor--pointer">
+            <span class="badge badge-info vinyl-counter">{{i + 1}}</span>
             <img class="img-cover" title="{{item.band}} / {{item.album}}" [src]="item.coverURL" />
         </div>
         
-        <div class="card card__info shadow-lg" [ngClass]="{'card__info--left': (i + 1) % 5 == 0 || (i + 1) % 6 == 0}" *ngIf="showInfo">
-            <div class="card-header">
+        <div class="card card__info shadow-lg" [ngClass]="{'card__info--left': (i + 1) % 6 == 0}" *ngIf="showInfo">
+            <div class="card-header card-header--info">
                 <span class="card-title m-0 float-left">
                     <fa-icon icon="info-circle"></fa-icon> Vinyl Information
                 </span>
@@ -53,9 +54,16 @@
                     <b>Album:</b> {{item.album}} <br>
                     <b>Genre:</b> {{item.genre}} <br>
                     <b>Country:</b> {{item.country}} <br>
-                    <br>
-                    <b>Info: </b> <span
-                        title="{{item.info}}">{{(item.info.length>300)? (item.info | slice:0:300)+'..':(item.info)}}</span>
+                    
+                    <span *ngIf="item.info">
+                        <br>
+                        <b>Info: </b> <span title="{{item.info}}">{{(item.info.length>300)? (item.info | slice:0:300)+'..':(item.info)}}</span>
+                    </span>
+
+                    <span *ngIf="item.notes">
+                        <br>
+                        <b>Notes: </b> <span title="{{item.notes}}">{{(item.notes.length>300)? (item.notes | slice:0:300)+'..':(item.notes)}}</span>
+                    </span>
                     <br>
                 </small>
             </div>
