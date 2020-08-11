@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { IVinylService } from '../interfaces/vinyl.interface';
 import { environment } from '../../../environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import Swal from 'sweetalert2';
 
 @Injectable()
@@ -14,8 +14,8 @@ export class VinylService extends IVinylService {
         super();
     }
 
-    getVinyls(): Observable<any> {
-        return this.http.get<any>(`${environment.api}/vinyl/getVinyls`)
+    searchVinyls(search: string): Observable<any> {
+        return this.http.get<any>(`${environment.api}/vinyl/getVinyls?search=${search}`)
             .pipe(map((response: any) => {
                 if (response.status === 200) {
                     return response.data;

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { IVinylService } from 'src/app/services/interfaces/vinyl.interface';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  public formGroup: FormGroup;
+  constructor(
+    private formBuilder: FormBuilder,
+    private vinylService: IVinylService
+  ) { }
 
   ngOnInit(): void {
+    this.formGroup = this.formBuilder.group({
+      search: [''],
+    });
+  }
+
+  searchVinyl(e: any): void {
+    const search = this.formGroup.value.search;
+
+    if (!search) {
+      return;
+    }
   }
 
 }

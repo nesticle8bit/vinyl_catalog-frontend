@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddVinylComponent } from '../../dialogs/dialog-add-vinyl/dialog-add-vinyl.component';
 import { IVinylService } from 'src/app/services/interfaces/vinyl.interface';
+import { VinylService } from 'src/app/services/implementations/vinyl.service';
 
 @Component({
   selector: 'app-vinyl-covers-list',
@@ -22,7 +23,7 @@ export class VinylCoversListComponent implements OnInit {
   }
 
   getVinyls(): void {
-    this.vinylService.getVinyls().subscribe((response: any) => {
+    this.vinylService.searchVinyls('').subscribe((response: any) => {
       this.vinylList = response;
     });
   }
