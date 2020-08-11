@@ -2,7 +2,7 @@
 
 ![Vinyl Catalog](https://user-images.githubusercontent.com/1715022/89718994-6b2bc900-d989-11ea-9092-089c6f7868ea.gif)
 
-# Last.fm Integration
+## Last.fm Integration
 - Create an account in [last.fm](https://www.last.fm/api/) and create an app to generate an api key
 - Add the api key in environment.ts:
 
@@ -14,14 +14,14 @@ export const environment = {
 };
 ```
 
-# Build
+## Build
 - In CMD just run this command:
 
 ```bash
 ng serve
 ```
 
-# Execute API
+## Execute API
 - Download and clone this repository [vinyl_catalog-backend](https://github.com/NESTicle/vinyl_catalog-backend) and run it with visual studio:
 
 ---
