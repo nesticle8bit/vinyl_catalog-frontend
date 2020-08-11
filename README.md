@@ -21,6 +21,11 @@ export const environment = {
 ng serve
 ```
 
+# Execute API
+- Download and clone this repository [vinyl_catalog-backend](https://github.com/NESTicle/vinyl_catalog-backend) and run it with visual studio:
+
+---
+
 ```cmd
 - creating new app
 ng new vinylCatalogApp --legacyBrowsers=true --routing=true --skipGit=true --skipTests=true --style=scss --verbose=true
