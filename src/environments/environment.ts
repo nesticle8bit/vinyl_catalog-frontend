@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost:56031/',
-  lastFmApiKey: ''
+  api: 'http://localhost:56031/api',
+  lastFmApiKey: '2eb6578e4e155fcd664e92d29484dcba'
 };
 
 /*

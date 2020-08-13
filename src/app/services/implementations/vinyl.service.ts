@@ -3,8 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { IVinylService } from '../interfaces/vinyl.interface';
 import { environment } from '../../../environments/environment';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, Subscription } from 'rxjs';
 import Swal from 'sweetalert2';
+import { SearchService } from '../implementations/search.service';
 
 @Injectable()
 export class VinylService extends IVinylService {

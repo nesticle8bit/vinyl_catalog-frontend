@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogAddVinylComponent } from '../../dialogs/dialog-add-vinyl/dialog-add-vinyl.component';
 import { IVinylService } from 'src/app/services/interfaces/vinyl.interface';
 import { VinylService } from 'src/app/services/implementations/vinyl.service';
+import { Subscription } from 'rxjs';
+import { SearchService } from 'src/app/services/implementations/search.service';
 
 @Component({
   selector: 'app-vinyl-covers-list',
@@ -10,20 +12,30 @@ import { VinylService } from 'src/app/services/implementations/vinyl.service';
   styleUrls: ['./vinyl-covers-list.component.scss']
 })
 export class VinylCoversListComponent implements OnInit {
+  private filterSubscription: Subscription;
   public vinylList = [];
   public showInfo: false;
 
   constructor(
     public dialog: MatDialog,
-    private vinylService: IVinylService
-  ) { }
+    private vinylService: IVinylService,
+    private searchService: SearchService,
+  ) {
+    this.filterSubscription = this.searchService.getFilter().subscribe((filterText: any) => {
+      if (filterText) {
+          this.getVinyls(filterText.text);
+      } else {
+          this.getVinyls();
+      }
+  });
+  }
 
   ngOnInit(): void {
     this.getVinyls();
   }
 
-  getVinyls(): void {
-    this.vinylService.searchVinyls('').subscribe((response: any) => {
+  getVinyls(search: string = ''): void {
+    this.vinylService.searchVinyls(search).subscribe((response: any) => {
       this.vinylList = response;
     });
   }
