@@ -32,6 +32,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { IVinylService } from './services/interfaces/vinyl.interface';
 import { VinylService } from './services/implementations/vinyl.service';
+import { LoginComponent } from './components/pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { VinylService } from './services/implementations/vinyl.service';
     SidebarComponent,
     VinylCoversListComponent,
     DialogAddVinylComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
