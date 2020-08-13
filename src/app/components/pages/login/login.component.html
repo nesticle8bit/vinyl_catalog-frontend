@@ -10,7 +10,7 @@
                 </a>
             </h1>
 
-            <div class="login-form-inner">
+            <form class="login-form-inner" [formGroup]="formGroup">
                 <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="false">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
@@ -18,36 +18,34 @@
                         <i class="fa fa-warning"></i>
                     </strong>
 
-                    Se han encontrado errores, las credenciales no son correctas.
+                    Errors found, the credentials are not correct, please correct them.
                 </div>
 
                 <h2>Log in to your Vinyl Club!</h2>
                 <h5>Please enter the credentials</h5>
 
-                <form action="/account/login" method="post">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control input-lg" placeholder="Username" />
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-6">
-                            <div class="form-group">
-                                <input type="password" class="form-control input-lg" placeholder="Password" />
-                            </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" placeholder="Username" formControlName="userName" />
                         </div>
                     </div>
 
-                    <div class="form-group pull-right">
-                        <button type="submit" class="btn btn-primary">
-                            <fa-icon [icon]="['fas', 'sign-in-alt']"></fa-icon> Login
-                        </button>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <input type="password" class="form-control input-lg" placeholder="Password" formControlName="password" />
+                        </div>
                     </div>
+                </div>
 
-                    <div class="clearfix"></div>
-                </form>
-            </div>
+                <div class="form-group pull-right">
+                    <button type="submit" class="btn btn-primary">
+                        <fa-icon [icon]="['fas', 'sign-in-alt']"></fa-icon> Login
+                    </button>
+                </div>
+
+                <div class="clearfix"></div>
+            </form>
 
             <div class="login-footer">
                 <div class="row">

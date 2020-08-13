@@ -5,9 +5,8 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { SocialComponent } from './components/layout/social/social.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/social', pathMatch: 'full' },
-  // { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   {
     path: 'social', component: SocialComponent, children: [
       { path: '', component: VinylCoversListComponent }
