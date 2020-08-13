@@ -1,1 +1,87 @@
-<p>login works!</p>
+<div class="body-login">
+    <div class="login-form clearfix">
+        <div class="login-authorize-form">
+            <h1>
+                <a href="/">
+                    <!-- <img src="img/thunderbird-logo.jpg" class="logo" alt="Logo" /> -->
+                    <div class="logo" style="padding: 47px 0px 0px 45px; font-size: 5rem; color: #37465d;">
+                        <fa-icon icon="record-vinyl"></fa-icon>
+                    </div>
+                </a>
+            </h1>
+
+            <div class="login-form-inner">
+                <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="false">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <strong>
+                        <i class="fa fa-warning"></i>
+                    </strong>
+
+                    Se han encontrado errores, las credenciales no son correctas.
+                </div>
+
+                <h2>Log in to your Vinyl Club!</h2>
+                <h5>Please enter the credentials</h5>
+
+                <form action="/account/login" method="post">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control input-lg" placeholder="Username" />
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group">
+                                <input type="password" class="form-control input-lg" placeholder="Password" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group pull-right">
+                        <button type="submit" class="btn btn-primary">
+                            <fa-icon [icon]="['fas', 'sign-in-alt']"></fa-icon> Login
+                        </button>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+
+            <div class="login-footer">
+                <div class="row">
+                    <div class="col-xs-12 col-md-5">
+                        <ul class="social-list text-sm-center">
+                            <li>
+                                <a href="#" target="_blank" data-toggle="tooltip" title="Facebook">
+                                    <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" target="_blank" data-toggle="tooltip" title="Twitter">
+                                    <fa-icon [icon]="['fab', 'twitter']"></fa-icon>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" target="_blank" data-toggle="tooltip" title="Youtube">
+                                    <fa-icon [icon]="['fab', 'youtube']"></fa-icon>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-12 col-md-7">
+                        <p class="copyright text-sm-center">Copyright © Vinyl Catalog.Club 2020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-form-image">
+            <div class="login-form-copy"></div>
+        </div>
+    </div>
+</div>

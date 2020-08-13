@@ -33,6 +33,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { IVinylService } from './services/interfaces/vinyl.interface';
 import { VinylService } from './services/implementations/vinyl.service';
 import { LoginComponent } from './components/pages/login/login.component';
+import { SocialComponent } from './components/layout/social/social.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { LoginComponent } from './components/pages/login/login.component';
     VinylCoversListComponent,
     DialogAddVinylComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    SocialComponent
   ],
   imports: [
     BrowserModule,
