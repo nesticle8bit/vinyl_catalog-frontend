@@ -3,7 +3,7 @@
 ![Vinyl Catalog](https://user-images.githubusercontent.com/1715022/89718994-6b2bc900-d989-11ea-9092-089c6f7868ea.gif)
 
 ## Demo
-[http://vinylcatalog.club/](http://vinylcatalog.club/)
+[https://vinylcatalog.club/](https://vinylcatalog.club/)
 
 ## Last.fm Integration
 - Create an account in [last.fm](https://www.last.fm/api/) and create an app to generate an api key
