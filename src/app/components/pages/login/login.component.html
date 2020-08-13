@@ -10,7 +10,7 @@
                 </a>
             </h1>
 
-            <form class="login-form-inner" [formGroup]="formGroup">
+            <form class="login-form-inner" [formGroup]="formGroup" (submit)="login()">
                 <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="false">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
