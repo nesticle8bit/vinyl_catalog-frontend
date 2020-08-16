@@ -34,6 +34,9 @@ import { IVinylService } from './services/interfaces/vinyl.interface';
 import { VinylService } from './services/implementations/vinyl.service';
 import { LoginComponent } from './components/pages/login/login.component';
 import { SocialComponent } from './components/layout/social/social.component';
+import { DialogRegisterComponent } from './components/dialogs/security/dialog-register/dialog-register.component';
+import { ISecurityService } from './services/interfaces/security.interface';
+import { SecurityService } from './services/implementations/security.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,8 @@ import { SocialComponent } from './components/layout/social/social.component';
     DialogAddVinylComponent,
     HeaderComponent,
     LoginComponent,
-    SocialComponent
+    SocialComponent,
+    DialogRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +73,7 @@ import { SocialComponent } from './components/layout/social/social.component';
   providers: [
     { provide: ILastFMService, useClass: LastFMService },
     { provide: IVinylService, useClass: VinylService },
+    { provide: ISecurityService, useClass: SecurityService },
   ],
   bootstrap: [AppComponent]
 })

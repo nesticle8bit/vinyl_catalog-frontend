@@ -1,0 +1,55 @@
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="formGroup">
+        <div class="row">
+            <div class="col-12 col-sm-5 p-3 register-separator">
+                <img src="/assets/images/illustrations/security.png" class="img-fluid" />
+            </div>
+
+            <div class="col-12 col-sm-7">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="mb-0">Create your account in vinyl catalog club</h2>
+                        <h4>Try our club for free</h4>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" formControlName="name" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group">
+                            <label>UserName</label>
+                            <input type="text" class="form-control" formControlName="userName" />
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" formControlName="password" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <mat-checkbox formControlName="accept">I accept the Privacy Policy and I agree with the Terms of Service, including the minimum age requirements.</mat-checkbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+
+    <button mat-button color="primary" (click)="register()" [disabled]="formGroup.invalid">
+        Register
+    </button>
+</mat-dialog-actions>
