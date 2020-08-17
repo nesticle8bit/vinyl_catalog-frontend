@@ -11,20 +11,20 @@
             </h1>
 
             <form class="login-form-inner" [formGroup]="formGroup" (submit)="login()">
-                <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="false">
+                <h2>Log in to your Vinyl Club!</h2>
+                <h5>
+                    Please enter the credentials - If you have not an account please <a href="javascript:void(0)" (click)="register()">click here</a>
+                </h5>
+
+                <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="errors">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                     <strong>
                         <i class="fa fa-warning"></i>
                     </strong>
 
-                    Errors found, the credentials are not correct, please correct them.
+                    {{errors}}
                 </div>
-
-                <h2>Log in to your Vinyl Club!</h2>
-                <h5>
-                    Please enter the credentials - If you have not an account please <a href="javascript:void(0)" (click)="register()">click here</a>
-                </h5>
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">

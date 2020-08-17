@@ -11,7 +11,7 @@
     <input class="form-control form-control-dark w-100" type="text" formControlName="search" placeholder="Search..." (change)="searchVinyl($event)" />
 
     <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
+        <li class="nav-item text-nowrap" (click)="signOut()">
             <a class="nav-link" href="#">Sign Out</a>
         </li>
     </ul>

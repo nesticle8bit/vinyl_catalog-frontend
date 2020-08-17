@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { IVinylService } from 'src/app/services/interfaces/vinyl.interface';
 import { SearchService } from 'src/app/services/implementations/search.service';
+import { ISecurityService } from 'src/app/services/interfaces/security.interface';
 
 @Component({
   selector: 'app-header',
@@ -12,8 +13,8 @@ export class HeaderComponent implements OnInit {
   public formGroup: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private vinylService: IVinylService,
-    private searchService: SearchService
+    private searchService: SearchService,
+    private securityService: ISecurityService
   ) { }
 
   ngOnInit(): void {
@@ -30,5 +31,9 @@ export class HeaderComponent implements OnInit {
     }
 
     this.searchService.sendFilter(search);
+  }
+
+  signOut(): void {
+    this.securityService.logout();
   }
 }

@@ -6,4 +6,8 @@ import { Observable } from 'rxjs';
 })
 export abstract class ISecurityService {
     abstract registerAccount(user: any): Observable<any>;
+    abstract getCurrentUser(): any;
+    abstract setUserToLocalStorage(obj: any): any;
+    abstract login(user: any): Observable<any>;
+    abstract logout(): void;
 }
