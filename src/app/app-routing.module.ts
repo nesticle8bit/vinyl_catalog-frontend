@@ -4,13 +4,15 @@ import { VinylCoversListComponent } from './components/lists/vinyl-covers-list/v
 import { LoginComponent } from './components/pages/login/login.component';
 import { SocialComponent } from './components/layout/social/social.component';
 import { AuthGuard } from './guards/auth.guard';
+import { CommunityComponent } from './components/pages/community/community.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/social', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   {
     path: 'social', component: SocialComponent, children: [
-      { path: '', component: VinylCoversListComponent, canActivate: [AuthGuard] }
+      { path: '', component: VinylCoversListComponent, canActivate: [AuthGuard] },
+      { path: 'community', component: CommunityComponent, canActivate: [AuthGuard] }
     ]
   }
 ];

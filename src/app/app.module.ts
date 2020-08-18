@@ -37,6 +37,8 @@ import { SocialComponent } from './components/layout/social/social.component';
 import { DialogRegisterComponent } from './components/dialogs/security/dialog-register/dialog-register.component';
 import { ISecurityService } from './services/interfaces/security.interface';
 import { SecurityService } from './services/implementations/security.service';
+import { CommunityComponent } from './components/pages/community/community.component';
+import { CommunityListComponent } from './components/lists/community-list/community-list.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { SecurityService } from './services/implementations/security.service';
     HeaderComponent,
     LoginComponent,
     SocialComponent,
-    DialogRegisterComponent
+    DialogRegisterComponent,
+    CommunityComponent,
+    CommunityListComponent
   ],
   imports: [
     BrowserModule,

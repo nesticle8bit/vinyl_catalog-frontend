@@ -173,3 +173,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 
 }
 
 .mat-checkbox-layout { white-space: normal !important; }
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}

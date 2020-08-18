@@ -32,8 +32,14 @@
 
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="#">
-                    <fa-icon icon="home"></fa-icon> Dashboard
+                <a class="nav-link active" href="javascript:void(0)" [routerLink]="['/']">
+                    <fa-icon icon="home"></fa-icon> Home
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)" [routerLink]="['/social/community']">
+                    <fa-icon icon="search-location"></fa-icon> Community
                 </a>
             </li>
         </ul>
