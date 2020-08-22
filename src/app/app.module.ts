@@ -39,6 +39,7 @@ import { ISecurityService } from './services/interfaces/security.interface';
 import { SecurityService } from './services/implementations/security.service';
 import { CommunityComponent } from './components/pages/community/community.component';
 import { CommunityListComponent } from './components/lists/community-list/community-list.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { CommunityListComponent } from './components/lists/community-list/commun
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
     NgSelectModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatPaginatorModule
   ],
   providers: [
     { provide: ILastFMService, useClass: LastFMService },
