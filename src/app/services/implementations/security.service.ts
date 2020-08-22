@@ -39,12 +39,10 @@ export class SecurityService extends ISecurityService {
     }
 
     getCurrentUser(): any {
-        debugger
         return this.currentUserSubject.value;
     }
 
     setUserToLocalStorage(obj: any): any {
-        debugger
         localStorage.setItem('vinylCatalogClub', JSON.stringify(obj));
         this.currentUserSubject.next(obj);
     }

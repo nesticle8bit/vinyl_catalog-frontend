@@ -40,6 +40,8 @@ import { SecurityService } from './services/implementations/security.service';
 import { CommunityComponent } from './components/pages/community/community.component';
 import { CommunityListComponent } from './components/lists/community-list/community-list.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { ICommunityService } from './services/interfaces/community.interface';
+import { CommunityService } from './services/implementations/community.service';
 
 @NgModule({
   declarations: [
@@ -80,6 +82,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     { provide: ILastFMService, useClass: LastFMService },
     { provide: IVinylService, useClass: VinylService },
     { provide: ISecurityService, useClass: SecurityService },
+    { provide: ICommunityService, useClass: CommunityService },
   ],
   bootstrap: [AppComponent]
 })
