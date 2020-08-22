@@ -178,3 +178,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 
     display: flex;
     flex: 1 1 auto;
 }
+
+.form-footer {
+    border-top: 1px solid #d0d0d0;
+    padding: 10px;
+    background: #f3f3f3;
+    margin-top: 5px;
+    text-align: center;
+}

@@ -2,5 +2,140 @@
     <h2>
         Create a Community
     </h2>
-    
+
+    <hr>
+
+    <section class="row">
+        <div class="col-12 col-xl-9">
+            <form>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label>Community Name</label>
+                            <input type="text" class="form-control" maxlength="100" />
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label>URL Community</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">https://vinylcatalog.club/social/community</div>
+                                </div>
+
+                                <input type="url" class="form-control" placeholder="URL">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <label>Description</label>
+                        <textarea rows="4" class="form-control" maxlength="300"></textarea>
+                    </div>
+                </div>
+
+                <br>
+                <h3 class="mb-0">Content</h3>
+                <hr class="mt-0">
+
+                <div class="row">
+                    <div class="col-12 col-xl-3">
+                        Publishing rules
+                    </div>
+
+                    <div class="col-12 col-xl-9">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="1" class="custom-control-input" />
+                            <label class="custom-control-label">Everyone can post</label>
+                        </div>
+
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="rules" class="custom-control-input" />
+                            <label class="custom-control-label">Only members can post</label>
+                        </div>
+
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="rules" class="custom-control-input" />
+                            <label class="custom-control-label">Only administrators and moderators can post</label>
+                        </div>
+                    </div>
+                </div>
+
+                <br class="mb-3 mt-3" >
+
+                <div class="row">
+                    <div class="col-12 col-xl-3">
+                        Post rules for comments
+                    </div>
+
+                    <div class="col-12 col-xl-9">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="1" class="custom-control-input" />
+                            <label class="custom-control-label">Everyone can comment</label>
+                        </div>
+
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="rules" class="custom-control-input" />
+                            <label class="custom-control-label">Only members can comment</label>
+                        </div>
+
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="rules" class="custom-control-input" />
+                            <label class="custom-control-label">Only administrators and moderators can comment</label>
+                        </div>
+                    </div>
+                </div>
+
+                <br class="mb-3 mt-3" >
+
+                <div class="row">
+                    <div class="col-12 col-xl-3">
+                        Sensitive
+                    </div>
+
+                    <div class="col-12 col-xl-9">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                            <label class="custom-control-label" for="customSwitch1">
+                                Content not safe for work? <span class="badge badge-danger">NSFW</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-footer">
+                            <button type="button" class="btn btn-sm btn-success">
+                                Create Community
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-12 col-xl-3">
+            <div class="card">
+                <div class="card-body">
+                    <img src="/assets/images/illustrations/communities.png" class="img-fluid" />
+                    <p>
+                        <b>
+                            Communities are the best way to connect people who have common interests.
+                        </b>
+                    </p>
+
+                    <div>
+                        <p>When creating a Community remember that the purpose must be clear.</p>
+                        <p>The title is essential so that others interested in the subject can find it easily.</p>
+                        <p>Before creating a new Channel, we suggest you look through the existing ones to make sure
+                            that there is not a similar or identical one.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
