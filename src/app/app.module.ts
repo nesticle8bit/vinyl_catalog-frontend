@@ -42,6 +42,7 @@ import { CommunityListComponent } from './components/lists/community-list/commun
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ICommunityService } from './services/interfaces/community.interface';
 import { CommunityService } from './services/implementations/community.service';
+import { TimeagoModule } from 'ngx-timeago';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,11 @@ import { CommunityService } from './services/implementations/community.service';
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
     NgSelectModule,
     MatTooltipModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    TimeagoModule.forRoot()
+  ],
+  exports: [
+    TimeagoModule
   ],
   providers: [
     { provide: ILastFMService, useClass: LastFMService },

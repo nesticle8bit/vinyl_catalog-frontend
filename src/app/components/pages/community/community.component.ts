@@ -12,4 +12,8 @@ export class CommunityComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  createCommunity(): void {
+
+  }
+
 }

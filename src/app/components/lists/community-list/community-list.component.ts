@@ -25,7 +25,7 @@ export class CommunityListComponent implements OnInit {
 
   getCommunities(): void {
     this.communityService.getCommunities().subscribe((response: any) => {
-      this.dataSource = response.publicaciones;
+      this.dataSource = response.communities;
       this.totalCount = response.pagination.totalCount;
     });
   }

@@ -3,26 +3,26 @@
 </h2>
 
 <div class="row">
-    <div class="col-12 col-xl-4" *ngFor="let i of [1,2,3]">
+    <article class="col-12 col-xl-6 mb-3" *ngFor="let community of dataSource">
         <div class="card">
             <div class="card-horizontal">
                 <div class="img-square-wrapper">
-                    <img class="" src="http://via.placeholder.com/180x180" />
+                    <img class="img-fluid" src="{{community.image}}" style="max-height: 330px;" />
                 </div>
-                <div class="card-body">
-                    <h3 class="card-title">Card title</h3>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+
+                <div class="card-body p-2">
+                    <h3 class="card-title font-weight-normal">{{community.name}}</h3>
+                    <p class="card-text font-weight-lighter">{{community.description}}</p>
                 </div>
             </div>
 
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
+            <div class="card-footer p-2">
+                <small class="text-muted">Created {{community.dateCreated | timeago:true}} by {{community.user.name}}</small>
             </div>
         </div>
-    </div>
-
-    <mat-paginator *ngIf="dataSource" [length]="totalCount" [pageSize]="paginationService.pageCount"
-        [pageSizeOptions]="paginationService.selectItemsPerPage" (page)="pageChange($event)" showFirstLastButtons>
-    </mat-paginator>
+    </article>
 </div>
+
+<mat-paginator *ngIf="dataSource" [length]="totalCount" [pageSize]="paginationService.pageCount"
+    [pageSizeOptions]="paginationService.selectItemsPerPage" (page)="pageChange($event)" showFirstLastButtons>
+</mat-paginator>
