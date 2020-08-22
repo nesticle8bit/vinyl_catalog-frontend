@@ -11,8 +11,22 @@
     <input class="form-control form-control-dark w-100" type="text" formControlName="search" placeholder="Search..." (change)="searchVinyl($event)" />
 
     <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap" (click)="signOut()">
-            <a class="nav-link" href="#">Sign Out</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{loggedUser.userInfo.userName}}
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right" style="position: absolute;">
+                <a class="dropdown-item" href="#">Your profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-danger" href="javascript:void(0)" (click)="signOut()">
+                    <fa-icon icon="sign-out-alt"></fa-icon> Log Out
+                </a>
+              </div>
         </li>
+        
+        <!-- <li class="nav-item text-nowrap" (click)="signOut()">
+            <a class="nav-link" href="#">Sign Out</a>
+        </li> -->
     </ul>
 </nav>

@@ -11,16 +11,20 @@ import { ISecurityService } from 'src/app/services/interfaces/security.interface
 })
 export class HeaderComponent implements OnInit {
   public formGroup: FormGroup;
+  public loggedUser: any;
+
   constructor(
     private formBuilder: FormBuilder,
     private searchService: SearchService,
-    private securityService: ISecurityService
+    private securityService: ISecurityService,
   ) { }
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
       search: [''],
     });
+
+    this.loggedUser = this.securityService.getCurrentUser();
   }
 
   searchVinyl(e: any): void {

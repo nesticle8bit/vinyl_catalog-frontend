@@ -183,6 +183,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 
     border-top: 1px solid #d0d0d0;
     padding: 10px;
     background: #f3f3f3;
-    margin-top: 5px;
+    margin-top: 10px;
     text-align: center;
+}
+
+.dropdown-menu {
+    font-size: 0.9rem;
+}
+
+.dropdown-item {
+    padding: .25rem 1rem;
 }
