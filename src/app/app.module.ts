@@ -43,6 +43,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ICommunityService } from './services/interfaces/community.interface';
 import { CommunityService } from './services/implementations/community.service';
 import { TimeagoModule } from 'ngx-timeago';
+import { CommunityAddComponent } from './components/pages/community/community-add/community-add.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { TimeagoModule } from 'ngx-timeago';
     SocialComponent,
     DialogRegisterComponent,
     CommunityComponent,
-    CommunityListComponent
+    CommunityListComponent,
+    CommunityAddComponent
   ],
   imports: [
     BrowserModule,
