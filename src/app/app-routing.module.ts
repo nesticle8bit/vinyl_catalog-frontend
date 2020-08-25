@@ -7,6 +7,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { CommunityComponent } from './components/pages/community/community.component';
 import { CommunityAddComponent } from './components/pages/community/community-add/community-add.component';
 import { TermsAndConditionsComponent } from './components/pages/terms-and-conditions/terms-and-conditions.component';
+import { DataPrivacyComponent } from './components/pages/data-privacy/data-privacy.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/social', pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes: Routes = [
       { path: 'community', component: CommunityComponent, canActivate: [AuthGuard] },
       { path: 'community/create', component: CommunityAddComponent, canActivate: [AuthGuard] },
 
-      { path: 'terms-and-conditions', component: TermsAndConditionsComponent, canActivate: [AuthGuard] }
+      { path: 'terms-and-conditions', component: TermsAndConditionsComponent, canActivate: [AuthGuard] },
+      { path: 'data-privacy', component: DataPrivacyComponent, canActivate: [AuthGuard] }
     ]
   }
 ];

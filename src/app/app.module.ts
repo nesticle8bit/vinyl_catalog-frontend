@@ -45,6 +45,7 @@ import { CommunityService } from './services/implementations/community.service';
 import { TimeagoModule } from 'ngx-timeago';
 import { CommunityAddComponent } from './components/pages/community/community-add/community-add.component';
 import { TermsAndConditionsComponent } from './components/pages/terms-and-conditions/terms-and-conditions.component';
+import { DataPrivacyComponent } from './components/pages/data-privacy/data-privacy.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { TermsAndConditionsComponent } from './components/pages/terms-and-condit
     CommunityComponent,
     CommunityListComponent,
     CommunityAddComponent,
-    TermsAndConditionsComponent
+    TermsAndConditionsComponent,
+    DataPrivacyComponent
   ],
   imports: [
     BrowserModule,
