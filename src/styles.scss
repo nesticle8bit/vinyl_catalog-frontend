@@ -212,3 +212,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 
     margin-right: 3px;
     position: relative;
 }
+
+// Fixing Custom Radiobutton of Bootstrap
+.custom-control-input {
+    left: 1.89px;
+    top: 5.9px;
+    z-index: 1;
+}

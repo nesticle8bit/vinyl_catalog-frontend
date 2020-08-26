@@ -7,12 +7,12 @@
 
     <section class="row">
         <div class="col-12 col-xl-9">
-            <form>
+            <form [formGroup]="formGroup" (submit)="createCommunity()">
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
                             <label>Community Name</label>
-                            <input type="text" class="form-control" maxlength="100" />
+                            <input type="text" class="form-control" maxlength="100" formControlName="name" />
                         </div>
                     </div>
 
@@ -24,7 +24,7 @@
                                     <div class="input-group-text">https://vinylcatalog.club/social/community</div>
                                 </div>
 
-                                <input type="url" class="form-control" placeholder="URL">
+                                <input type="url" class="form-control" placeholder="URL" maxlength="50" formControlName="url" />
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                 <div class="row">
                     <div class="col-12">
                         <label>Description</label>
-                        <textarea rows="4" class="form-control" maxlength="300"></textarea>
+                        <textarea rows="3" class="form-control" maxlength="300" formControlName="description"></textarea>
                     </div>
                 </div>
 
@@ -48,17 +48,17 @@
 
                     <div class="col-12 col-xl-9">
                         <div class="custom-control custom-radio">
-                            <input type="radio" name="1" class="custom-control-input" />
+                            <input type="radio" formControlName="publishRule" name="publishRule" value="1" class="custom-control-input" />
                             <label class="custom-control-label">Everyone can post</label>
                         </div>
 
                         <div class="custom-control custom-radio">
-                            <input type="radio" name="rules" class="custom-control-input" />
+                            <input type="radio" formControlName="publishRule" name="publishRule" value="2" class="custom-control-input" />
                             <label class="custom-control-label">Only members can post</label>
                         </div>
 
                         <div class="custom-control custom-radio">
-                            <input type="radio" name="rules" class="custom-control-input" />
+                            <input type="radio" formControlName="publishRule" name="publishRule" value="3" class="custom-control-input" />
                             <label class="custom-control-label">Only administrators and moderators can post</label>
                         </div>
                     </div>
@@ -73,17 +73,17 @@
 
                     <div class="col-12 col-xl-9">
                         <div class="custom-control custom-radio">
-                            <input type="radio" name="1" class="custom-control-input" />
+                            <input type="radio" formControlName="commentRule" name="commentRule" value="1" class="custom-control-input" />
                             <label class="custom-control-label">Everyone can comment</label>
                         </div>
 
                         <div class="custom-control custom-radio">
-                            <input type="radio" name="rules" class="custom-control-input" />
+                            <input type="radio" formControlName="commentRule" name="commentRule" value="2" class="custom-control-input" />
                             <label class="custom-control-label">Only members can comment</label>
                         </div>
 
                         <div class="custom-control custom-radio">
-                            <input type="radio" name="rules" class="custom-control-input" />
+                            <input type="radio" formControlName="commentRule" name="commentRule" value="3" class="custom-control-input" />
                             <label class="custom-control-label">Only administrators and moderators can comment</label>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
 
                     <div class="col-12 col-xl-9">
                         <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                            <input type="checkbox" formControlName="nsfw" class="custom-control-input" id="customSwitch1">
                             <label class="custom-control-label" for="customSwitch1">
                                 Content not safe for work? <span class="badge badge-danger">NSFW</span>
                             </label>
@@ -109,7 +109,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="form-footer">
-                            <button type="button" class="btn btn-sm btn-outline-success">
+                            <button type="submit" class="btn btn-sm btn-outline-success">
                                 Create Community
                             </button>
                         </div>
