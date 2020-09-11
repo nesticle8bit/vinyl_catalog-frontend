@@ -11,13 +11,18 @@
                 </div>
 
                 <div class="card-body p-2">
-                    <h3 class="card-title font-weight-normal">{{community.name}}</h3>
+                    <h3 class="card-title font-weight-normal">
+                        <a href="javascript:void(0)" (click)="viewCommunity(community)">
+                            {{community.name}}
+                        </a>
+                    </h3>
+
                     <p class="card-text font-weight-lighter">{{community.description}}</p>
                 </div>
             </div>
 
             <div class="card-footer p-2">
-                <small class="text-muted">Created {{community.dateCreated | timeago:true}} by {{community.user.name}}</small>
+                <small class="text-muted">Created {{community.dateCreated | timeago:true}} by <b>{{community.user.name}}</b></small>
             </div>
         </div>
     </article>

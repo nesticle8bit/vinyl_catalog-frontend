@@ -9,6 +9,7 @@ import { CommunityAddComponent } from './components/pages/community/community-ad
 import { TermsAndConditionsComponent } from './components/pages/terms-and-conditions/terms-and-conditions.component';
 import { DataPrivacyComponent } from './components/pages/data-privacy/data-privacy.component';
 import { ManageAccountComponent } from './components/pages/manage-account/manage-account.component';
+import { CommunityViewComponent } from './components/pages/community/community-view/community-view.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/social', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: '', component: VinylCoversListComponent, canActivate: [AuthGuard] },
       { path: 'community', component: CommunityComponent, canActivate: [AuthGuard] },
       { path: 'community/create', component: CommunityAddComponent, canActivate: [AuthGuard] },
+      { path: 'community/:url', component: CommunityViewComponent, canActivate: [AuthGuard] },
 
       { path: 'manage-account', component: ManageAccountComponent, canActivate: [AuthGuard] },
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ICommunityService } from 'src/app/services/interfaces/community.interface';
 
 @Component({
   selector: 'app-community-add',
@@ -7,10 +8,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./community-add.component.scss']
 })
 export class CommunityAddComponent implements OnInit {
+  public error = {
+    url: false
+  };
+
   public formGroup: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private communityService: ICommunityService
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +31,27 @@ export class CommunityAddComponent implements OnInit {
   }
 
   createCommunity(): void {
+    if (this.formGroup.invalid) {
+      return;
+    }
     console.log(this.formGroup.value);
+  }
+
+  verifyURLCommunity(): void {
+    const formGroup = this.formGroup.value;
+
+    if (!formGroup || !formGroup.url) {
+      return;
+    }
+
+    this.communityService.verifyCommunityURL(formGroup.url).subscribe((exists: any) => {
+      console.log(exists);
+      if (exists) {
+        this.error.url = true;
+      } else {
+        this.error.url = false;
+      }
+    });
   }
 
 }

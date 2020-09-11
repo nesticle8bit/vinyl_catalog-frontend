@@ -3,12 +3,12 @@ import { MatTableDataSource } from '@angular/material/table';
 import { PaginationService } from '../../../services/shared/pagination.service';
 import { PageEvent } from '@angular/material/paginator';
 import { ICommunityService } from 'src/app/services/interfaces/community.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-community-list',
   templateUrl: './community-list.component.html',
-  styles: [
-  ]
+  styleUrls: ['./community-list.component.scss']
 })
 export class CommunityListComponent implements OnInit {
   public dataSource: MatTableDataSource<string>;
@@ -16,7 +16,8 @@ export class CommunityListComponent implements OnInit {
 
   constructor(
     public paginationService: PaginationService,
-    public communityService: ICommunityService
+    public communityService: ICommunityService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +29,10 @@ export class CommunityListComponent implements OnInit {
       this.dataSource = response.communities;
       this.totalCount = response.pagination.totalCount;
     });
+  }
+
+  viewCommunity(community: any): void {
+    this.router.navigateByUrl(`/social/community/${community.url}`);
   }
 
   pageChange(event: PageEvent): void {

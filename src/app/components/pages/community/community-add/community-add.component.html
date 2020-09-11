@@ -17,14 +17,18 @@
                     </div>
 
                     <div class="col-12">
-                        <div class="form-group">
+                        <div class="form-group" [ngClass]="{'is-invalid': error.url == true}">
                             <label>URL Community</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">https://vinylcatalog.club/social/community</div>
                                 </div>
 
-                                <input type="url" class="form-control" placeholder="URL" maxlength="50" formControlName="url" />
+                                <input type="url" class="form-control" placeholder="URL" maxlength="50" formControlName="url" (change)="verifyURLCommunity()" />
+                            </div>
+
+                            <div class="invalid-feedback" *ngIf="error.url">
+                                There is a community with this url, please change it to save this community
                             </div>
                         </div>
                     </div>

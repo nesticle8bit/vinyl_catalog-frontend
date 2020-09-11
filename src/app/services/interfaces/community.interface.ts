@@ -6,4 +6,5 @@ import { Observable } from 'rxjs';
 })
 export abstract class ICommunityService {
     abstract getCommunities(): Observable<any>;
+    abstract verifyCommunityURL(url: string): Observable<any>;
 }

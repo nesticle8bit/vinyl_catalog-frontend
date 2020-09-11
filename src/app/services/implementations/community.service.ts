@@ -30,4 +30,19 @@ export class CommunityService extends ICommunityService {
                 }
             }));
     }
+
+    verifyCommunityURL(url: string): Observable<any> {
+        return this.http.get<any>(`${environment.api}/communities/verifyCommunityURL?url=${url}`)
+            .pipe(map((response: any) => {
+                if (response.status === 200) {
+                    return response.data;
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: response.errors.join(',')
+                    });
+                }
+            }));
+    }
 }

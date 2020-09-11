@@ -47,6 +47,7 @@ import { CommunityAddComponent } from './components/pages/community/community-ad
 import { TermsAndConditionsComponent } from './components/pages/terms-and-conditions/terms-and-conditions.component';
 import { DataPrivacyComponent } from './components/pages/data-privacy/data-privacy.component';
 import { ManageAccountComponent } from './components/pages/manage-account/manage-account.component';
+import { CommunityViewComponent } from './components/pages/community/community-view/community-view.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { ManageAccountComponent } from './components/pages/manage-account/manage
     CommunityAddComponent,
     TermsAndConditionsComponent,
     DataPrivacyComponent,
-    ManageAccountComponent
+    ManageAccountComponent,
+    CommunityViewComponent
   ],
   imports: [
     BrowserModule,
