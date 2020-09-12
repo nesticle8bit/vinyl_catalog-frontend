@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { IVinylService } from 'src/app/services/interfaces/vinyl.interface';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { IParameterService } from 'src/app/services/interfaces/parameter.interface';
 
 @Component({
   selector: 'app-dialog-add-vinyl',
@@ -13,6 +14,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class DialogAddVinylComponent implements OnInit {
   public formGroup: FormGroup;
   public genreList: any = [];
+  public countryList: any;
   public colorList = [
     'Black',
     'Black/White/Grey',
@@ -31,14 +33,15 @@ export class DialogAddVinylComponent implements OnInit {
 
   public vinylTypes = [
     'Reissue'
-  ]
+  ];
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<DialogAddVinylComponent>,
     private lastFM: ILastFMService,
     private formBuilder: FormBuilder,
-    private vinylService: IVinylService
+    private vinylService: IVinylService,
+    private parameterService: IParameterService
   ) { }
 
   ngOnInit(): void {
@@ -59,6 +62,14 @@ export class DialogAddVinylComponent implements OnInit {
       type: [''],
       datePublished: [''],
       notes: [''],
+    });
+
+    this.getCountries();
+  }
+
+  getCountries(): void {
+    this.parameterService.getCountries().subscribe((response: any) => {
+      this.countryList = response;
     });
   }
 

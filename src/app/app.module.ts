@@ -48,6 +48,8 @@ import { TermsAndConditionsComponent } from './components/pages/terms-and-condit
 import { DataPrivacyComponent } from './components/pages/data-privacy/data-privacy.component';
 import { ManageAccountComponent } from './components/pages/manage-account/manage-account.component';
 import { CommunityViewComponent } from './components/pages/community/community-view/community-view.component';
+import { IParameterService } from './services/interfaces/parameter.interface';
+import { ParameterService } from './services/implementations/parameter.service';
 
 @NgModule({
   declarations: [
@@ -98,6 +100,7 @@ import { CommunityViewComponent } from './components/pages/community/community-v
     { provide: IVinylService, useClass: VinylService },
     { provide: ISecurityService, useClass: SecurityService },
     { provide: ICommunityService, useClass: CommunityService },
+    { provide: IParameterService, useClass: ParameterService },
   ],
   bootstrap: [AppComponent]
 })
