@@ -15,13 +15,43 @@
         </div>
     </div>
 
+
+
     <section class="row">
-        <div class="col-12 col-sm-6 col-md-4">
-            
+        <div class="col-12 col-sm-8 col-md-9">
+
         </div>
 
-        <div class="col-12 col-sm-6 col-md-8">
-            
+        <div class="col-12 col-sm-4 col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Lastest Comments
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <tbody>
+                          <tr *ngFor="let item of [1,2,3]; let i=index">
+                            <td>
+                                <img src="https://user-images.githubusercontent.com/1715022/92983238-bd1fad00-f467-11ea-9b42-25d42582e5dd.png" style="width:43px; height:43px;" />
+                            </td>
+                            <td>
+                                <small>
+                                    <b>@nesticle8bit</b>
+                                </small>
+                                <br>
+                                <small>
+                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque...
+                                </small>
+                                <br>
+                                <small>
+                                    <i>5 minutes ago</i>
+                                </small>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
         </div>
     </section>
 </main>
