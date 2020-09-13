@@ -15,6 +15,9 @@ export class DialogAddVinylComponent implements OnInit {
   public formGroup: FormGroup;
   public genreList: any = [];
   public countryList: any;
+  public genresList: any;
+  public subGenresList: any;
+
   public colorList = [
     'Black',
     'Black/White/Grey',
@@ -49,7 +52,8 @@ export class DialogAddVinylComponent implements OnInit {
       id: [0],
       band: ['', Validators.required],
       album: ['', Validators.required],
-      genre: ['', Validators.required],
+      genre: [0, Validators.required],
+      subGenre: [0, Validators.required],
       coverURL: ['', Validators.required],
       dateReleased: [''],
       country: ['', Validators.required],
@@ -60,11 +64,11 @@ export class DialogAddVinylComponent implements OnInit {
       currency: ['Euro', Validators.required],
       link: [''],
       type: [''],
-      datePublished: [''],
       notes: [''],
     });
 
     this.getCountries();
+    this.getGenres();
   }
 
   getCountries(): void {
@@ -86,7 +90,7 @@ export class DialogAddVinylComponent implements OnInit {
 
         const urlImage = info.image.filter((img: any) => img.size === 'extralarge')[0];
 
-        this.createGenresList(info.tags);
+        // this.createGenresList(info.tags);
 
         this.formGroup.patchValue({
           band: info.artist,
@@ -95,6 +99,20 @@ export class DialogAddVinylComponent implements OnInit {
           coverURL: urlImage ? urlImage['#text'] : ''
         });
       }
+    });
+  }
+
+  getGenres(): void {
+    this.parameterService.getGenres(true).subscribe((response: any) => {
+      this.genresList = response;
+    });
+  }
+
+  getSubGenres(): void {
+    const genre = this.formGroup.value.genre;
+
+    this.parameterService.getSubgenresByGenre(genre).subscribe((response: any) => {
+      this.subGenresList = response;
     });
   }
 

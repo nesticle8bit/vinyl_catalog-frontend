@@ -30,4 +30,34 @@ export class ParameterService extends IParameterService {
                 }
             }));
     }
+
+    getGenres(getAll: boolean): Observable<any> {
+        return this.http.get<any>(`${environment.api}/genres/getGenres?getAll=${getAll}`)
+            .pipe(map((response: any) => {
+                if (response.status === 200) {
+                    return response.data;
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: response.errors.join(',')
+                    });
+                }
+            }));
+    }
+
+    getSubgenresByGenre(genreId: number): Observable<any> {
+        return this.http.get<any>(`${environment.api}/genres/getSubGenresByGenreId?id=${genreId}`)
+            .pipe(map((response: any) => {
+                if (response.status === 200) {
+                    return response.data;
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: response.errors.join(',')
+                    });
+                }
+            }));
+    }
 }

@@ -6,4 +6,6 @@ import { Observable } from 'rxjs';
 })
 export abstract class IParameterService {
     abstract getCountries(): Observable<any>;
+    abstract getGenres(getAll: boolean): Observable<any>;
+    abstract getSubgenresByGenre(genreId: number): Observable<any>;
 }
