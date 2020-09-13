@@ -18,7 +18,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
 import { VinylCoversListComponent } from './components/lists/vinyl-covers-list/vinyl-covers-list.component';
 import { DialogAddVinylComponent } from './components/dialogs/dialog-add-vinyl/dialog-add-vinyl.component';
@@ -50,6 +50,7 @@ import { ManageAccountComponent } from './components/pages/manage-account/manage
 import { CommunityViewComponent } from './components/pages/community/community-view/community-view.component';
 import { IParameterService } from './services/interfaces/parameter.interface';
 import { ParameterService } from './services/implementations/parameter.service';
+import { JwtInterceptor } from './helpers/interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,8 @@ import { ParameterService } from './services/implementations/parameter.service';
     { provide: ISecurityService, useClass: SecurityService },
     { provide: ICommunityService, useClass: CommunityService },
     { provide: IParameterService, useClass: ParameterService },
+
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
