@@ -51,6 +51,7 @@ import { CommunityViewComponent } from './components/pages/community/community-v
 import { IParameterService } from './services/interfaces/parameter.interface';
 import { ParameterService } from './services/implementations/parameter.service';
 import { JwtInterceptor } from './helpers/interceptors/jwt.interceptor';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { JwtInterceptor } from './helpers/interceptors/jwt.interceptor';
     NgSelectModule,
     MatTooltipModule,
     MatPaginatorModule,
-    TimeagoModule.forRoot()
+    TimeagoModule.forRoot(),
+    NgbModule
   ],
   exports: [
     TimeagoModule
