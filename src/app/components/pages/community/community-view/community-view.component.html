@@ -19,7 +19,38 @@
 
     <section class="row">
         <div class="col-12 col-sm-8 col-md-9">
-
+            <div class="widget-area no-padding blank">
+                <div class="status-upload">
+                    <form>
+                        <textarea placeholder="What are you doing right now?"></textarea>
+                        <ul>
+                            <li>
+                                <a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio">
+                                    <fa-icon icon="music"></fa-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video">
+                                    <fa-icon icon="video"></fa-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record">
+                                    <fa-icon icon="microphone"></fa-icon>
+                                </a>
+                            </li>
+                            <li>
+                                <a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture">
+                                    <fa-icon icon="image"></fa-icon>
+                                </a>
+                            </li>
+                        </ul>
+                        <button type="submit" class="btn btn-success green">
+                            <fa-icon icon="share"></fa-icon> Share
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
 
         <div class="col-12 col-sm-4 col-md-3">
@@ -30,26 +61,27 @@
                 <div class="card-body">
                     <table class="table table-striped">
                         <tbody>
-                          <tr *ngFor="let item of [1,2,3]; let i=index">
-                            <td>
-                                <img src="https://user-images.githubusercontent.com/1715022/92983238-bd1fad00-f467-11ea-9b42-25d42582e5dd.png" style="width:43px; height:43px;" />
-                            </td>
-                            <td>
-                                <small>
-                                    <b>@nesticle8bit</b>
-                                </small>
-                                <br>
-                                <small>
-                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque...
-                                </small>
-                                <br>
-                                <small>
-                                    <i>5 minutes ago</i>
-                                </small>
-                            </td>
-                          </tr>
+                            <tr *ngFor="let item of [1,2,3]; let i=index">
+                                <td>
+                                    <img src="https://user-images.githubusercontent.com/1715022/92983238-bd1fad00-f467-11ea-9b42-25d42582e5dd.png"
+                                        style="width:43px; height:43px;" />
+                                </td>
+                                <td>
+                                    <small>
+                                        <b>@nesticle8bit</b>
+                                    </small>
+                                    <br>
+                                    <small>
+                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque...
+                                    </small>
+                                    <br>
+                                    <small>
+                                        <i>5 minutes ago</i>
+                                    </small>
+                                </td>
+                            </tr>
                         </tbody>
-                      </table>
+                    </table>
                 </div>
             </div>
         </div>
