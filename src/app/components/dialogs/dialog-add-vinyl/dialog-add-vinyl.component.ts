@@ -29,6 +29,7 @@ export class DialogAddVinylComponent implements OnInit {
     'Purple',
     'Red',
     'Red/Blue',
+    'Orange',
     'Silver / Black Marbled',
     'White',
     'Yellow'
