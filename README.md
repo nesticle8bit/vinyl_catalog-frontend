@@ -1,5 +1,9 @@
 # Vinyl Catalog App
 
+![screenzy-1602293284733](https://user-images.githubusercontent.com/1715022/95642413-ff8bd800-0a6d-11eb-8575-04c6601c3e69.png)
+
+----
+
 ![Vinyl Catalog](https://user-images.githubusercontent.com/1715022/90344205-14ec0500-dfdd-11ea-82a3-b3d12a1881ce.gif)
 
 ## Login
