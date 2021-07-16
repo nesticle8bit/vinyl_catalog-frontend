@@ -10,4 +10,5 @@ export abstract class ISecurityService {
     abstract setUserToLocalStorage(obj: any): any;
     abstract login(user: any): Observable<any>;
     abstract logout(): void;
+    abstract changeUserAvatar(file: any): Observable<any>;
 }

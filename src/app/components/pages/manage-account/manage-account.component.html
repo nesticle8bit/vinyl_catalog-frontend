@@ -5,9 +5,11 @@
     <div class="row">
         <div class="col-12 col-sm-2">
             <img src="https://puu.sh/Gfz7J/76b9d888a4.jpg" alt="Avatar" class="rounded img-thumbnail mb-1" />
-            <button type="button" class="btn btn-sm btn-info btn-block">
+            <button type="button" class="btn btn-sm btn-info btn-block" (click)="file.click()">
                 <fa-icon icon="image"></fa-icon> Change Avatar
             </button>
+
+            <input type="file" accept=".png, .jpg, .jpeg" #file (change)="avatarUpload($event)" hidden />
         </div>
 
         <div class="col-12 col-sm-10">

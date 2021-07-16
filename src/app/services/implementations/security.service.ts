@@ -60,4 +60,14 @@ export class SecurityService extends ISecurityService {
         this.router.navigateByUrl('');
         this.currentUserSubject.next(null);
     }
+
+    changeUserAvatar(file: any): Observable<any> {
+        const formData = new FormData();
+        formData.append("avatar", file);
+
+        return this.http.post<any>(`${environment.api}/users/loginUser`, formData)
+            .pipe(map((response: any) => {
+                return response;
+            }));
+    }
 }
