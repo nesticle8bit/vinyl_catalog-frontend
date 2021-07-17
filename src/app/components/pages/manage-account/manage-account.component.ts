@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ISecurityService } from 'src/app/services/interfaces/security.interface';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -8,7 +9,9 @@ import Swal from 'sweetalert2';
 })
 export class ManageAccountComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private securityService: ISecurityService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +35,17 @@ export class ManageAccountComponent implements OnInit {
 
       return;
     }
+
+    this.securityService.changeUserAvatar(currentFile).subscribe((response: any) => {
+      if(response) {
+        Swal.fire({
+          title: 'Changed',
+          text: 'Avatar was changed succesfully',
+          icon: 'success',
+          timer: 3000
+        });
+      }
+    });
   }
 
   isImageAllowed(format: string): boolean {

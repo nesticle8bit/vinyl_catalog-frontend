@@ -1,12 +1,12 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { Observable, BehaviorSubject } from 'rxjs';
-import Swal from 'sweetalert2';
 import { ISecurityService } from '../interfaces/security.interface';
 import { UserModel } from '../../models/security/user.model';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Injectable()
 export class SecurityService extends ISecurityService {
@@ -63,9 +63,10 @@ export class SecurityService extends ISecurityService {
 
     changeUserAvatar(file: any): Observable<any> {
         const formData = new FormData();
-        formData.append("avatar", file);
+        formData.append('avatar', file, file.name);
+        formData.append('userId', this.getCurrentUser().userInfo.id);
 
-        return this.http.post<any>(`${environment.api}/users/loginUser`, formData)
+        return this.http.post<any>(`${environment.api}/users/changeUserAvatar`, formData, {reportProgress: true, observe: 'events'})
             .pipe(map((response: any) => {
                 return response;
             }));

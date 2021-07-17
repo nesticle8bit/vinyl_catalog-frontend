@@ -1,5 +1,5 @@
+import { UserInfoModel } from './userInfo.model';
 export class JwtModel {
     token: string;
-    userInfo: string;
-    email: string;
+    userInfo: UserInfoModel;
 }
